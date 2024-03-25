@@ -4,6 +4,8 @@ calculates the minimum number of operations to achieve a given
 number of characters using only “Copy All” and “Paste” operations.
 using copy-paste process
 """
+
+
 def minOperations(n: int) -> int:
     """ Initialize variables. """
     next_op = 'H'   
