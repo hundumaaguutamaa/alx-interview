@@ -17,6 +17,7 @@ request(movieURL, (error, response, body) => {
           console.log(error);
         } else {
           console.log(JSON.parse(body).name);
+          console.log(character.name);
         }
       });
     });
