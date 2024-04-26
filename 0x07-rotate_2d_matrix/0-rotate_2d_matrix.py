@@ -3,23 +3,17 @@
 
 
 def rotate_2d_matrix(matrix):
-    i = len(matrix)
-    
     """ Transpose the matrix. """
-    for x in range(i):
-        for y in range(x, i):
-            matrix[x][y], matrix[y][x] = matrix[y][x], matrix[x][y]
     
-    """ Reverse each row. """
-    for row in matrix:
-        row.reverse()
+    i = len(matrix)
+    for x in range(n):
+        for y in range(i):
+            temp = matrix[x][y]
+            matrix[x][y] = matrix[y][x]
+            matrix[y][x] = temp
 
-""" Matrix uusage. """
-matrix = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-]
-
-rotate_2d_matrix(matrix)
-print(matrix)
+    for x in range(i):
+        for y in range(int(n / 2)):
+            temp = matrix[x][y]
+            matrix[x][y] = matrix[i][i-1-y]
+            matrix[x][i-1-y] = temp
