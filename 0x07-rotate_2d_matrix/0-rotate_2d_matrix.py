@@ -1,9 +1,12 @@
 #!/usr/bin/python3
-""" Rotate 2-D Matrix """
+""" Function that Rotate 2-D Matrix
+"""
 
 
 def rotate_2d_matrix(matrix):
-    """ Transpose the matrix. """
+    """ Rotate the matrix. 
+       Return:None 
+    """
     
     n = len(matrix)  # Correct variable name
     for x in range(n):
