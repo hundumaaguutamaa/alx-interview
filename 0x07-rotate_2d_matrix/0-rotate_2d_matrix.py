@@ -5,15 +5,15 @@
 def rotate_2d_matrix(matrix):
     """ Transpose the matrix. """
     
-    i = len(matrix)
+    n = len(matrix)  # Correct variable name
     for x in range(n):
-        for y in range(i):
+        for y in range(n):  # Correct loop variable
             temp = matrix[x][y]
             matrix[x][y] = matrix[y][x]
             matrix[y][x] = temp
 
-    for x in range(i):
+    for x in range(n):
         for y in range(int(n / 2)):
             temp = matrix[x][y]
-            matrix[x][y] = matrix[i][i-1-y]
-            matrix[x][i-1-y] = temp
+            matrix[x][y] = matrix[x][n-1-y]  # Correct index
+            matrix[x][n-1-y] = temp
