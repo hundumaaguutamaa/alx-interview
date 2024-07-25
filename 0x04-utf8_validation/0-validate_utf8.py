@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-
+"""utf validation
+"""
 def validUTF8(data):
     """Determine if a given data set represents a valid UTF-8 encoding.
 
@@ -10,16 +11,6 @@ def validUTF8(data):
         bool: True if data is a valid UTF-8 encoding, else False.
     """
     
-    def is_continuation_byte(byte):
-        """Check if the byte is a continuation byte (i.e., starts with '10').
-
-        Args:
-            byte (int): A byte value.
-
-        Returns:
-            bool: True if byte is a continuation byte, else False.
-        """
-        return (byte & 0xC0) == 0x80
 
     num_bytes = 0
 
@@ -37,10 +28,7 @@ def validUTF8(data):
                 num_bytes = 3
             else:
                 return False
-        else:
-            if not is_continuation_byte(byte):
-                return False
+
             num_bytes -= 1
-
+    
     return num_bytes == 0
-
