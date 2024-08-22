@@ -23,4 +23,3 @@ def makeChange(coins, total):
     
     # Return the result for the desired amount
     return fewest_coins[total] if fewest_coins[total] != float('inf') else -1
-
